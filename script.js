@@ -35,6 +35,22 @@ function efectoHabilidades(){
 }
 
 
+//Funcion que descarga el CVs
+function descargarDocumento() {
+    const url = "./documentos/CV de Luis Campañó (Android).pdf";
+    const nombreArchivo = "CV de Luis Campañó (Android).pdf";
+    
+    // Crea un enlace temporal
+    const enlace = document.createElement('a');
+    enlace.href = url;
+    enlace.download = nombreArchivo;
+
+    // Dispara la descarga
+    document.body.appendChild(enlace);
+    enlace.click();
+    document.body.removeChild(enlace);
+}
+
 //detecto el scrolling para aplicar la animacion de la barra de habilidades
 window.onscroll = function(){
     efectoHabilidades();
